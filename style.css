@@ -1,0 +1,109 @@
+:root{
+    --x: null;
+    --textHeight: null;
+    --imgRow: null;
+    /* --anumationDuration; */
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 50px;
+}
+h2{
+    margin: 20px 0;
+    text-decoration: underline;
+}
+.container{
+    height: calc(var(--x) * 2 + var(--textHeight));
+    width: 100%px;
+    overflow: hidden;
+}
+.text{
+    position:absolute;
+    margin: var(--x);
+    z-index: 1;
+    /* height: var(--textHeight); */
+    height: fit-content;
+    width: calc(var(--imgRow) - var(--x));
+}
+p{
+    margin: 40px;
+    text-align: center;
+    color: white;
+    /* height: var(--textHeight); */
+}
+.images{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(7, 26, 42);
+}
+.top{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+}
+.right{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.bottom{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.left{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.img{
+    position: relative;
+    height: var(--x);
+    width: var(--x);
+    background-position: center;
+    background-size: cover;
+    animation-duration: .6s;
+}
+.img2{
+    position: relative;
+    height: var(--x);
+    width: var(--x);
+    background-position: center;
+    background-size: cover;
+    animation-duration: .3s;
+}
+@keyframes topToBottom {
+    0% {top: 0;}
+    /* 80% {top: var(--x);} */
+    100%{top: var(--x);}
+}
+@keyframes bottomToTop{
+    0% {bottom: 0;}
+    /* 80%{bottom: var(--x);} */
+    100%{bottom: var(--x);}
+}
+@keyframes leftToRight{
+    0% {left: 0;}
+    /* 80%{left: var(--x);} */
+    100%{left: var(--x);}
+}
+@keyframes rightToLeft{
+    0% {right: 0;}
+    /* 80%{right: var(--x);} */
+    100%{right: var(--x);}
+}
+@media (max-width: 600px) {
+    body{
+        margin: 30px;
+    }
+}
