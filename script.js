@@ -270,7 +270,7 @@ function resizeFunc(){
     }
     prevRow = imgRow;
     prevCol = imgCol;
-    document.title = `${imgRow} ${imgCol}`
+
     startInterval1();
     startInterval2();
 }
