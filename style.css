@@ -2,7 +2,6 @@
     --x: null;
     --textHeight: null;
     --imgRow: null;
-    /* --anumationDuration; */
 }
 *{
     box-sizing: border-box;
@@ -22,10 +21,9 @@ h2{
     overflow: hidden;
 }
 .text{
-    position:absolute;
+    position: absolute;
     margin: var(--x);
     z-index: 1;
-    /* height: var(--textHeight); */
     height: fit-content;
     width: calc(var(--imgRow) - var(--x));
 }
@@ -33,7 +31,6 @@ p{
     margin: 40px;
     text-align: center;
     color: white;
-    /* height: var(--textHeight); */
 }
 .images{
     position: relative;
@@ -84,23 +81,19 @@ p{
 }
 @keyframes topToBottom {
     0% {top: 0;}
-    /* 80% {top: var(--x);} */
-    100%{top: var(--x);}
+    100% {top: var(--x);}
 }
 @keyframes bottomToTop{
     0% {bottom: 0;}
-    /* 80%{bottom: var(--x);} */
-    100%{bottom: var(--x);}
+    100% {bottom: var(--x);}
 }
 @keyframes leftToRight{
     0% {left: 0;}
-    /* 80%{left: var(--x);} */
-    100%{left: var(--x);}
+    100% {left: var(--x);}
 }
 @keyframes rightToLeft{
     0% {right: 0;}
-    /* 80%{right: var(--x);} */
-    100%{right: var(--x);}
+    100% {right: var(--x);}
 }
 @media (max-width: 600px) {
     body{

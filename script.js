@@ -105,31 +105,29 @@ function timeDelay(){   //delay 1.4 sec before images swap animation
     imageDelay = setTimeout(function(){
         executeTime();
         rand = Math.floor((Math.random())*index);
-        if(rand===index-1){
-            if(imgCol+imgRow-2>15){
-                nodes1[rand].style.animationName = "leftToRight";
-                nodes1[rand-1].style.animationName = "rightToLeft";
-            }
-            else{
-                nodes1[rand].style.animationName = "bottomToTop";
-                nodes1[0].style.animationName = "topToBottom";
-            }
+        if(rand===29 && (imgRow+imgCol)*2-4>index){
+            nodes1[0].style.animationName = "leftToRight";
+            nodes1[1].style.animationName = "rightToLeft";
         }
-        else if(rand>index-imgCol){
+        else if(rand===index-1){
             nodes1[rand].style.animationName = "bottomToTop";
-            nodes1[rand+1].style.animationName = "topToBottom";
+            nodes1[0].style.animationName = "topToBottom";
         }
-        else if(rand>imgRow+imgCol-3){
-            nodes1[rand].style.animationName = "rightToLeft";
-            nodes1[rand+1].style.animationName = "leftToRight";
+        else if(rand<imgRow-1){
+            nodes1[rand].style.animationName = "leftToRight";
+            nodes1[rand+1].style.animationName = "rightToLeft";
         }
-        else if(rand>imgRow-2){
+        else if(rand<imgRow+imgCol-2){
             nodes1[rand].style.animationName = "topToBottom";
             nodes1[rand+1].style.animationName = "bottomToTop";
         }
+        else if(rand<imgRow*2+imgCol-3){
+            nodes1[rand].style.animationName = "rightToLeft";
+            nodes1[rand+1].style.animationName = "leftToRight";
+        }
         else{
-            nodes1[rand].style.animationName = "leftToRight";
-            nodes1[rand+1].style.animationName = "rightToLeft";
+            nodes1[rand].style.animationName = "bottomToTop";
+            nodes1[rand+1].style.animationName = "topToBottom";
         } 
     }, 1400);
 }
@@ -144,12 +142,12 @@ function executeTime(){ //swapping animation for 0.6 sec
             nodes1[rand+1].style.animationName = "null";
         }
         else{
-            if((imgCol+imgRow-2>15)){
-                nodes1[rand].style.backgroundImage = `url(${images1[rand-1]})`;
-                nodes1[rand-1].style.backgroundImage = `url(${images1[rand]})`;
-                [images1[rand], images1[rand-1]] = [images1[rand-1], images1[rand]];
-                nodes1[rand].style.animationName = "null";
-                nodes1[rand-1].style.animationName = "null";
+            if(rand===29 && (imgRow+imgCol)*2-4>index){
+                nodes1[0].style.backgroundImage = `url(${images1[1]})`;
+                nodes1[1].style.backgroundImage = `url(${images1[0]})`;
+                [images1[0], images1[1]] = [images1[1], images1[0]];
+                nodes1[0].style.animationName = "null";
+                nodes1[1].style.animationName = "null";
             }
             else{
                 nodes1[rand].style.backgroundImage = `url(${images1[0]})`;
@@ -171,33 +169,30 @@ function timeDelay2(){   //delay 0.7 sec after images swap animation
     imageDelay2 = setTimeout(function(){
         executeTime2();
         rand2 = Math.floor((Math.random())*index);
-        // rand2 = 29
-        if(rand2===index-1){
-            if(imgCol+imgRow-2>15){
-                nodes2[rand2].style.animationName = "leftToRight";
-                nodes2[rand2-1].style.animationName = "rightToLeft";
-            }
-            else{
-                nodes2[rand2].style.animationName = "bottomToTop";
-                nodes2[0].style.animationName = "topToBottom";
-            }
+        if(rand2===29 && (imgRow+imgCol)*2-4>index){
+            nodes2[0].style.animationName = "leftToRight";
+            nodes2[1].style.animationName = "rightToLeft";
         }
-        else if(rand2>imgRow*2+imgCol-4){
+        else if(rand2===index-1){
             nodes2[rand2].style.animationName = "bottomToTop";
-            nodes2[rand2+1].style.animationName = "topToBottom";
+            nodes2[0].style.animationName = "topToBottom";
         }
-        else if(rand2>imgRow+imgCol-3){
-            nodes2[rand2].style.animationName = "rightToLeft";
-            nodes2[rand2+1].style.animationName = "leftToRight";
+        else if(rand2<imgRow-1){
+            nodes2[rand2].style.animationName = "leftToRight";
+            nodes2[rand2+1].style.animationName = "rightToLeft";
         }
-        else if(rand2>imgRow-2){
+        else if(rand2<imgRow+imgCol-2){
             nodes2[rand2].style.animationName = "topToBottom";
             nodes2[rand2+1].style.animationName = "bottomToTop";
         }
+        else if(rand2<imgRow*2+imgCol-3){
+            nodes2[rand2].style.animationName = "rightToLeft";
+            nodes2[rand2+1].style.animationName = "leftToRight";
+        }
         else{
-            nodes2[rand2].style.animationName = "leftToRight";
-            nodes2[rand2+1].style.animationName = "rightToLeft";
-        }  
+            nodes2[rand2].style.animationName = "bottomToTop";
+            nodes2[rand2+1].style.animationName = "topToBottom";
+        } 
     }, 700);
 }
 
@@ -211,12 +206,12 @@ function executeTime2(){ //swapping animation for 0.3 sec
             nodes2[rand2+1].style.animationName = "null";
         }
         else{
-            if((imgCol+imgRow-2>15)){
-                nodes2[rand2].style.backgroundImage = `url(${images2[rand2-1]})`;
-                nodes2[rand2-1].style.backgroundImage = `url(${images2[rand2]})`;
-                [images2[rand2], images2[rand2-1]] = [images2[rand2-1], images2[rand2]];
-                nodes2[rand2].style.animationName = "null";
-                nodes2[rand2-1].style.animationName = "null";
+            if(rand2===29 && (imgRow+imgCol)*2-4>index){
+                nodes2[0].style.backgroundImage = `url(${images2[1]})`;
+                nodes2[1].style.backgroundImage = `url(${images2[0]})`;
+                [images2[0], images2[1]] = [images2[1], images2[0]];
+                nodes2[0].style.animationName = "null";
+                nodes2[1].style.animationName = "null";
             }
             else{
                 nodes2[rand2].style.backgroundImage = `url(${images2[0]})`;
@@ -242,29 +237,24 @@ function resizeFunc(){
         imgRow = Math.floor(conWidth/130);
     }
     let hw = conWidth/imgRow;
-    let y = hw + 'px';
-    root.style.setProperty('--x', y);
+    root.style.setProperty('--x', `${hw}px`);
     
     // adjust text box height
     let paraHeight = document.querySelector("p").offsetHeight + 80;
-    console.log(paraHeight)
     if(paraHeight%hw>0){
         let textHeight = (Math.ceil(paraHeight/hw))*hw;
-        
-        textHeight = textHeight + 'px';
-        root.style.setProperty('--textHeight', textHeight);
+        root.style.setProperty('--textHeight', `${textHeight}px`)
     }
     let conHeight = document.querySelector(".container").offsetHeight;
     if(window.innerWidth<=600){
         imgCol = Math.round(conHeight/hw);
-
     }
     else{
         imgCol = Math.floor(conHeight/130);
     }
     let r = (imgRow-1) * hw + 'px';
     root.style.setProperty('--imgRow', r);
-    
+
     if(prevRow!=imgRow || prevCol!=imgCol){
         loadImages()
     }
@@ -278,7 +268,6 @@ function resizeFunc(){
 resizeFunc();
 
 document.addEventListener('visibilitychange', () => {
-    // setTimeout(() => {
         if(document.hidden){
             clearAllInterval()
         }
@@ -286,5 +275,4 @@ document.addEventListener('visibilitychange', () => {
             startInterval1();
             startInterval2();
         }
-    // }, 500);
 })
