@@ -275,4 +275,9 @@ document.addEventListener('visibilitychange', () => {
             startInterval1();
             startInterval2();
         }
+<<<<<<< HEAD
 })
+=======
+    // }, 500);
+})
+>>>>>>> a58545b54a6ca69a4bb6b85f32602747795a1072
